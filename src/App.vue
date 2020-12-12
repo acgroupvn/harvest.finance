@@ -1,22 +1,19 @@
 <template>
   <div>
     <Header />
-    <farmPage />
-    
-    
+    <stakePage />
   </div>
 </template>
 
 <script>
 import Header from './components/header.vue' 
-import farmPage from './components/Farm.vue' 
-
+import stakePage from './components/StakePage.vue' 
 
 export default {
   name: 'app',
   components:{
     Header, 
-    farmPage
+    stakePage
   }
 }
 </script>
