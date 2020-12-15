@@ -330,6 +330,7 @@
                         </div>
                     </div>
                     <div class="body__tab">
+                        <div @click="openTab">
                         <div class="body__tab-stablecoins">
                             <span class="closed">
                                 <div class="boder"></div>
@@ -406,6 +407,248 @@
                                     </div>
                                 </div>
                             </span>
+                            <div class="closeTab">
+                            <div class="body__amount_xx">
+                                <div class="body__amount_xx-title-table">
+                                    <div class="body__amount_xx-title-tablee">
+                                        <div class="body__amount_xx-title-tablee-M">Amount</div>
+                                        <div class="body__amount_xx-title-tablee-A">Asset</div>
+                                        <div class="body__amount_xx-title-tablee-H">Harvest APY</div>
+                                        <div class="body__amount_xx-title-tablee-D">Deposits ($)</div>
+                                        <div class="body__amount_xx-title-tablee-Y">Your balance</div>
+                                    </div>
+                                </div>
+                                <div class="body__amount_xx-2">
+                                    <div class="body__amount_xx-2-1-1_button">
+                                        <div class="xx-button-2-1-1">
+                                            <div class="lowIgi">
+                                                <div class="ljvMwn"></div>
+                                                <div value disabled placeholder="0" class="input_amount">
+                                                    <input type="number" min="0" disabled placeholder="0" value>
+                                                </div>
+                                                <button class="B-button">MAX</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_WETH">
+                                        <div class="body__amount_xx-2-1-1_WETHhh">
+                                            <img src="../assets/weth.png" alt="" class="weth-img">
+                                            WETH
+                                        </div>
+                                    </div> 
+                                    <div class="body__amount_xx-2-1-1_node">
+                                        <div class="gliaon">
+                                            <span>...</span>
+                                        </div> 
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Deposits">
+                                        <div class="body__amount_xx-2-1-1_Deposits-1">
+                                            13.99M
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Your">
+                                        <span class="Your">0.000000000</span>
+                                    </div>                        
+                                </div>
+                                <div class="body__amount_xx-2">
+                                    <div class="body__amount_xx-2-1-1_button">
+                                        <div class="xx-button-2-1-1">
+                                            <div class="lowIgi">
+                                                <div class="ljvMwn"></div>
+                                                <div value disabled placeholder="0" class="input_amount">
+                                                    <input type="number" min="0" disabled placeholder="0" value>
+                                                </div>
+                                                <button class="B-button">MAX</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_WETH">
+                                        <div class="body__amount_xx-2-1-1_WETHhh">
+                                            <img src="../assets/d.png" alt="" class="weth-img">
+                                            UNI:ETH-DPI
+                                            <img src="../assets/new.png" alt="" class="new">
+                                        </div>
+                                    </div> 
+                                    <div class="body__amount_xx-2-1-1_node">
+                                        <div class="gliaon">
+                                            <span>...</span>
+                                        </div> 
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Deposits">
+                                        <div class="body__amount_xx-2-1-1_Deposits-1">
+                                            13.99M
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Your">
+                                        <span class="Your">0.000000000</span>
+                                    </div>                        
+                                </div>
+                                <div class="body__amount_xx-2">
+                                    <div class="body__amount_xx-2-1-1_button">
+                                        <div class="xx-button-2-1-1">
+                                            <div class="lowIgi">
+                                                <div class="ljvMwn"></div>
+                                                <div value disabled placeholder="0" class="input_amount">
+                                                    <input type="number" min="0" disabled placeholder="0" value>
+                                                </div>
+                                                <button class="B-button">MAX</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_WETH">
+                                        <div class="body__amount_xx-2-1-1_WETHhh">
+                                            <img src="../assets/icon-7.png" alt="" class="weth-img">
+                                            CRV:HBTC
+                                            <img src="../assets/new.png" alt="" class="new">
+                                        </div>
+                                    </div> 
+                                    <div class="body__amount_xx-2-1-1_node">
+                                        <div class="gliaon">
+                                            <span>...</span>
+                                        </div> 
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Deposits">
+                                        <div class="body__amount_xx-2-1-1_Deposits-1">
+                                            13.99M
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Your">
+                                        <span class="Your">0.000000000</span>
+                                    </div>                        
+                                </div>
+                                <div class="body__amount_xx-2">
+                                    <div class="body__amount_xx-2-1-1_button">
+                                        <div class="xx-button-2-1-1">
+                                            <div class="lowIgi">
+                                                <div class="ljvMwn"></div>
+                                                <div value disabled placeholder="0" class="input_amount">
+                                                    <input type="number" min="0" disabled placeholder="0" value>
+                                                </div>
+                                                <button class="B-button">MAX</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_WETH">
+                                        <div class="body__amount_xx-2-1-1_WETHhh">
+                                            <img src="../assets/icon-8.png" alt="" class="weth-img">
+                                            CRV:HUSD
+                                            <img src="../assets/new.png" alt="" class="new">
+                                        </div>
+                                    </div> 
+                                    <div class="body__amount_xx-2-1-1_node">
+                                        <div class="gliaon">
+                                            <span>...</span>
+                                        </div> 
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Deposits">
+                                        <div class="body__amount_xx-2-1-1_Deposits-1">
+                                            13.99M
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Your">
+                                        <span class="Your">0.000000000</span>
+                                    </div>                        
+                                </div>
+                                <div class="body__amount_xx-2">
+                                    <div class="body__amount_xx-2-1-1_button">
+                                        <div class="xx-button-2-1-1">
+                                            <div class="lowIgi">
+                                                <div class="ljvMwn"></div>
+                                                <div value disabled placeholder="0" class="input_amount">
+                                                    <input type="number" min="0" disabled placeholder="0" value>
+                                                </div>
+                                                <button class="B-button">MAX</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_WETH">
+                                        <div class="body__amount_xx-2-1-1_WETHhh">
+                                            <img src="../assets/farm.png" alt="" class="weth-img">
+                                            FARM
+                                        </div>
+                                    </div> 
+                                    <div class="body__amount_xx-2-1-1_node">
+                                        <div class="gliaon">
+                                            <span>...</span>
+                                        </div> 
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Deposits">
+                                        <div class="body__amount_xx-2-1-1_Deposits-1">
+                                            13.99M
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Your">
+                                        <span class="Your">0.000000000</span>
+                                    </div>                        
+                                </div>
+                                <div class="body__amount_xx-2">
+                                    <div class="body__amount_xx-2-1-1_button">
+                                        <div class="xx-button-2-1-1">
+                                            <div class="lowIgi">
+                                                <div class="ljvMwn"></div>
+                                                <div value disabled placeholder="0" class="input_amount">
+                                                    <input type="number" min="0" disabled placeholder="0" value>
+                                                </div>
+                                                <button class="B-button">MAX</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_WETH">
+                                        <div class="body__amount_xx-2-1-1_WETHhh">
+                                            <img src="../assets/farm-usdc.png" alt="" class="weth-img">
+                                            FARM/USDC
+                                        </div>
+                                    </div> 
+                                    <div class="body__amount_xx-2-1-1_node">
+                                        <div class="gliaon">
+                                            <span>...</span>
+                                        </div> 
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Deposits">
+                                        <div class="body__amount_xx-2-1-1_Deposits-1">
+                                            13.99M
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Your">
+                                        <span class="Your">0.000000000</span>
+                                    </div>                        
+                                </div>
+                                <div class="body__amount_xx-2">
+                                    <div class="body__amount_xx-2-1-1_button">
+                                        <div class="xx-button-2-1-1">
+                                            <div class="lowIgi">
+                                                <div class="ljvMwn"></div>
+                                                <div value disabled placeholder="0" class="input_amount">
+                                                    <input type="number" min="0" disabled placeholder="0" value>
+                                                </div>
+                                                <button class="B-button">MAX</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_WETH">
+                                        <div class="body__amount_xx-2-1-1_WETHhh">
+                                            <img src="../assets/farm-weth.png" alt="" class="weth-img">
+                                            FARM/ETH
+                                            <img src="../assets/new.png" alt="" class="new">
+                                        </div>
+                                    </div> 
+                                    <div class="body__amount_xx-2-1-1_node">
+                                        <div class="gliaon">
+                                            <span>...</span>
+                                        </div> 
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Deposits">
+                                        <div class="body__amount_xx-2-1-1_Deposits-1">
+                                            13.99M
+                                        </div>
+                                    </div>
+                                    <div class="body__amount_xx-2-1-1_Your">
+                                        <span class="Your">0.000000000</span>
+                                    </div>                        
+                                </div>
+                            </div>
+                            </div>
+                        </div>
                         </div>
                         <div class="body__tab-stablecoins">
                             <span class="closed">
@@ -644,12 +887,23 @@ export default {
         return{
             click:true
         }
+    },
+    methods:{
+        openTab: function(){
+                    var close = document.querySelector('.closeTab')
+                    close.classList.add('openTab')
+                },
     }
-    
     
 }
 </script>
 <style lang="scss" scoped>
+.closeTab{
+     display:none;
+     }
+.closeTab.openTab{
+    display: block;
+    }
 .harvest__farm{
     max-width: 750px;
     margin: 0px auto;

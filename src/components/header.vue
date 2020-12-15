@@ -13,9 +13,9 @@
             "Harvest"
           </div>
           <div class="harvest__body-header-menu">
-            <a href="">Farm</a>
+            <router-link to="/"  class-active="active" exact>Farm</router-link>
             <a href="">Stake</a>
-            <a href="">FAQ</a>
+            <router-link to="/FAQ"  class-active="active" exact>FAQ</router-link>
             <a href="">Dashboard</a>
             <a href="">Stats</a>
             <a href="">Wiki</a>
@@ -29,7 +29,41 @@
 
 <script>
 export default {
-
+     /* data: function(){
+          return{
+                changeSelect1:true ,
+                changeSelect2:false ,
+                changeSelect3:false,
+                changeSelect4:false,
+                changeSelect5:false,
+                changeSelect6:false,
+                adress:'',
+                isEnded:true,
+                check:true,
+                
+          }
+      },
+ 
+    methods: {
+        changeSelect(item) {
+            this.$emit('selectChoice', item);
+            if(item == 'FARM') {
+                this.changeSelect1=true 
+                this.changeSelect2=false 
+                this.changeSelect3=false
+            } 
+            else if(item == 'STAKE') {
+                this.changeSelect1=false 
+                this.changeSelect2=true 
+                this.changeSelect3=false
+            }  
+            else {
+                this.changeSelect1=false 
+                this.changeSelect2=false 
+                this.changeSelect3=true
+            } 
+        },
+    }*/
 }
 </script>
 
@@ -42,7 +76,18 @@ export default {
 h1, h2 {
   font-weight: normal;
 }
-
+.lol{
+  color:black!important;
+  margin-bottom: -4px;
+  border-bottom:4px solid black;
+  opacity: 1!important;
+}
+.router-link-active{
+  color:black!important;
+  margin-bottom: -4px;
+  border-bottom:4px solid black;
+  opacity: 1!important;
+}
 ul {
   list-style-type: none;
   padding: 0;
