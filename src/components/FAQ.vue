@@ -77,13 +77,101 @@
                         <a href="">here</a>
                     </li>
                     <li>We would like to thank Haechi, Peckshield and CertiK for their hard work on the audits.</li>
-                    <div style="margin-top:10px"></div>
-                    <div style="width:100%; display:flex; justify-content: space-around; align-item:center; flex-wap:wap;">
-                        <a href="">
-                            <img src="../assets/faq-1.png" style="width:230px;" alt="">
-                        </a>
-                    </div>
                 </ul>
+                <div style="margin-top:10px"></div>
+                <div class="question-img">
+                    <a href="">
+                        <img src="../assets/faq-1.png" style="width:230px;" alt="">
+                    </a>
+                    <a href="">
+                        <img src="../assets/faq-2.png" style="width:230px;" alt="">
+                    </a>
+                    <a href="">
+                        <img src="../assets/faq-3.png" style="width:230px;" alt="">
+                    </a>
+                </div>
+            </span>
+        </div>
+        <div class="harvest__faq-1">
+            <div class="harvest__faq-1-question">Acknowledgements</div>
+            <span class="harvest__faq-1-nd">
+                Thanks to:
+                <br><br>
+                <ul>
+                    <li>The many people who helped out with this project, including providing comments and helpful suggestions for the early iterations of this product.</li>
+                    <li>Weeb who has created one of the most useful public goods at https://yieldfarming.info/.</li>
+                    <li>Andre Cronje, who provided inspiration in that a lone developer can build so much useful DeFi infrastructure so quickly. He’s a great example of what is possible in the world of DeFi where barriers to entry have been greatly reduced, and software, creativity, and value are so closely interlinked.</li>
+                    <li>The community for participating in this farming cooperative with us, thank you!</li>
+                </ul>
+            </span>
+        </div>
+        <div class="harvest__faq-1">
+            <div class="harvest__faq-1-question">Where can I learn more about Harvest?</div>
+            <span class="harvest__faq-1-nd">
+                <span>👩‍🌾</span>
+                The Harvest Community Wiki has a wealth of up-to-date information 
+                <br>
+                <a href="">https://farm.chainwiki.dev/</a>
+            </span>
+        </div>
+        <div class="harvest__faq-1">
+            <div class="harvest__faq-1-question">Links</div>
+            <span class="harvest__faq-1-nd">
+                <ul>
+                    <li>
+                        <span>🧑‍🌾</span>
+                        <a href="">Inactive Pools</a>
+                    </li>
+                    <li>
+                        <a href="">GitHub</a>
+                    </li>
+                    <li>
+                        <a href="">Twitter</a>
+                    </li>
+                    <li>
+                        <a href="">Discord</a>
+                    </li>
+                    <li>
+                        <a href="">Medium</a>
+                    </li>
+                    <li>
+                        <a href="">Reddit</a>
+                    </li>
+                    <li>
+                        <a href="">Wiki</a>
+                    </li>
+                    <li>
+                        <a href="">策略</a>
+                    </li>
+                    <li>
+                        <a href="">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="">Audits</a>
+                    </li>
+                    <li>
+                        <a href="">Security Bug Bounty</a>
+                    </li>
+                </ul>
+            </span>
+        </div>
+        <div class="harvest__faq-1">
+            <div class="harvest__faq-1-question">Harvest is proud to be listed on:</div>
+            <span class="harvest__faq-1-nd">
+                <div class="qs-img">
+                    <a href="">
+                        <img src="../assets/defi-pulse.png" alt="" style="width:230px;">
+                    </a>
+                    <a href="">
+                        <img src="../assets/qs-1.svg" alt="" style="width:230px;">
+                    </a>
+                    <a href="">
+                        <img src="../assets/qs-2.png" alt="" style="width:230px;">
+                    </a>
+                    <a href="">
+                        <img src="../assets/qs-3.png" alt="" style="width:230px;">
+                    </a>
+                </div>
             </span>
         </div>
     </div>
@@ -128,5 +216,29 @@ export default {
 }
 .harvest__faq-1-nd li{
     margin-bottom: 5px;
+}
+.question-img{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.harvest__faq-1-nd a{
+    color:black;
+    font-weight: bold;
+}
+.qs-img{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.qs-img a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 </style>
