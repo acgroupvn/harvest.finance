@@ -56,9 +56,13 @@ module.exports = {
         }
       },
       {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
+        enforce: "pre",
+        test: /\.(js|vue)$/,
+        exclude: /node_modules/,
+        loader: "eslint-loader",
+        options: {
+          formatter: require('eslint-friendly-formatter')
+        }
       },
       {
         test: /\.(png|jpg|gif|svg)$/,

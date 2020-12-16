@@ -132,7 +132,6 @@ a {
     height: 60px;
     overflow: overlay;
 }
- 
 .harvest__body-header-menu{
     display: flex;
     -webkit-box-align: center;
