@@ -10,7 +10,7 @@
         <div class="harvest__body-header">
           <div class="harvest__body-header-xeHavest">
             <img src="../assets/xe.gif" alt="">
-            "Harvest"
+            Harvest
           </div>
           <div class="harvest__body-header-menu">
             <a href="">Farm</a>
@@ -132,7 +132,6 @@ a {
     height: 60px;
     overflow: overlay;
 }
- 
 .harvest__body-header-menu{
     display: flex;
     -webkit-box-align: center;
