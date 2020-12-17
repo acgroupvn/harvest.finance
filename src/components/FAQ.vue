@@ -4,10 +4,10 @@
         <div class="harvest__faq-1">
             <div class="harvest__faq-1-question">What is Harvest?</div>
             <span class="harvest__faq-1-nd">
-                Harvest automatically farms the 
+                Harvest automatically farms the
                 <b>highest yield</b>
                  available from the newest DeFi protocols, and optimizes the yields that are received using the
-                 <b>latest farming techniques.</b>
+                <b>latest farming techniques.</b>
             </span>
         </div>
         <div class="harvest__faq-1">
@@ -61,7 +61,7 @@
             <span class="harvest__faq-1-nd">
                  <p style="margin-top:0px;">The Harvest Cooperative is comprised of humble farmers pooling resources together in order to earn profits and become the largest industrialized farming co-op in the world. When farmers deposit, Harvest automatically farms the highest yield with these deposits. 70% of these profits are distributed back to the depositors. The other 30% of profits are used to market buy FARM tokens en masse. These FARM tokens are then distributed proportionally to the Harvest Cooperative who stakes FARM tokens in the profit share pool. This aligns long term incentives with our FARM holders.</p>
                  <p>In addition, the Profit Share pool also receives weekly FARM emissions from the total supply of 690,420. The breakdown of emissions can be found in the weekly Medium updates from the team.</p>
-                 For detailed mechanics of FARM and the profit share pool, you can read more here: 
+                    For detailed mechanics of FARM and the profit share pool, you can read more here:
                  <a href="">here</a>
             </span>
         </div>
@@ -109,7 +109,7 @@
             <div class="harvest__faq-1-question">Where can I learn more about Harvest?</div>
             <span class="harvest__faq-1-nd">
                 <span>👩‍🌾</span>
-                The Harvest Community Wiki has a wealth of up-to-date information 
+                The Harvest Community Wiki has a wealth of up-to-date information
                 <br>
                 <a href="">https://farm.chainwiki.dev/</a>
             </span>
@@ -160,16 +160,16 @@
             <span class="harvest__faq-1-nd">
                 <div class="qs-img">
                     <a href="">
-                        <img src="../assets/defi-pulse.png" alt="" style="width:230px;">
+                        <img src="../assets/defi-pulse.png" alt="t" style="width:230px;">
                     </a>
                     <a href="">
-                        <img src="../assets/qs-1.svg" alt="" style="width:230px;">
+                        <img src="../assets/qs-1.svg" style="width:230px;">
                     </a>
                     <a href="">
-                        <img src="../assets/qs-2.png" alt="" style="width:230px;">
+                        <img src="../assets/qs-2.png" style="width:230px;">
                     </a>
                     <a href="">
-                        <img src="../assets/qs-3.png" alt="" style="width:230px;">
+                        <img src="../assets/qs-3.png" style="width:230px;">
                     </a>
                 </div>
             </span>

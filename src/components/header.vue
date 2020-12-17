@@ -14,7 +14,7 @@
           </div>
           <div class="harvest__body-header-menu">
             <router-link to="/"  class-active="active" exact>Farm</router-link>
-            <a href="">Stake</a>
+            <router-link to="/Stake"  class-active="active" exact>Stake</router-link>
             <router-link to="/FAQ"  class-active="active" exact>FAQ</router-link>
             <a href="">Dashboard</a>
             <a href="">Stats</a>
@@ -29,41 +29,7 @@
 
 <script>
 export default {
-     /* data: function(){
-          return{
-                changeSelect1:true ,
-                changeSelect2:false ,
-                changeSelect3:false,
-                changeSelect4:false,
-                changeSelect5:false,
-                changeSelect6:false,
-                adress:'',
-                isEnded:true,
-                check:true,
-                
-          }
-      },
- 
-    methods: {
-        changeSelect(item) {
-            this.$emit('selectChoice', item);
-            if(item == 'FARM') {
-                this.changeSelect1=true 
-                this.changeSelect2=false 
-                this.changeSelect3=false
-            } 
-            else if(item == 'STAKE') {
-                this.changeSelect1=false 
-                this.changeSelect2=true 
-                this.changeSelect3=false
-            }  
-            else {
-                this.changeSelect1=false 
-                this.changeSelect2=false 
-                this.changeSelect3=true
-            } 
-        },
-    }*/
+
 }
 </script>
 
@@ -177,7 +143,6 @@ a {
     height: 60px;
     overflow: overlay;
 }
- 
 .harvest__body-header-menu{
     display: flex;
     -webkit-box-align: center;
