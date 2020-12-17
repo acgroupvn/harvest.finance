@@ -16,6 +16,7 @@ module.exports = {
     'plugin:vue/recommended'
   ],
   rules: {
+    "no-unused-vars": "off",
     "no-new": 0,
     "no-debugger": process.env.NODE_ENV === 'production' ? 2 : 0,
     "indent": ['error', 2],

@@ -19,7 +19,7 @@
                 </span>
               </div>
               <div class="stake_nav">
-                <button type="button">
+                <button type="button" @click="testWeb">
                   <div class="load">
                     <span>.</span>
                     <span>.</span>
@@ -45,7 +45,7 @@
                 </span>
               </div>
               <div class="stake_nav">
-                <button type="button">
+                <button type="button" @click="getValue">
                   Select
                 </button>
                 <b>14,200 USD in prizes</b>
@@ -827,6 +827,56 @@
 </template>
 
 <script>
+const Web3 = require('web3')
+const Eth = require('web3-eth')
+const eth = new Eth(Eth.givenProvider || 'ws://some.local-or-remote.node:8546')
+const web3 = new Web3(Web3.givenProvider || 'ws://some.local-or-remote.node:8546')
+const myContract = new web3.eth.Contract([
+  {
+    constant: false,
+    inputs: [
+      {
+        name: '_id',
+        type: 'uint256'
+      },
+      {
+        name: '_name',
+        type: 'string'
+      },
+      {
+        name: '_college',
+        type: 'string'
+      }
+    ],
+    name: 'setStudentDetails',
+    outputs: [],
+    payable: false,
+    stateMutability: 'nonpayable',
+    type: 'function'
+  },
+  {
+    constant: true,
+    inputs: [],
+    name: 'getStudentDetails',
+    outputs: [
+      {
+        name: '',
+        type: 'uint256'
+      },
+      {
+        name: '',
+        type: 'string'
+      },
+      {
+        name: '',
+        type: 'string'
+      }
+    ],
+    payable: false,
+    stateMutability: 'view',
+    type: 'function'
+  }
+], '0xb9488fd06aa4dfc707808d9bbb2e4ebece939586')
 export default {
   methods: {
     showContent: function (el) {
@@ -836,6 +886,13 @@ export default {
           coll[i].classList.toggle('is-open')
         }
       }
+    },
+    testWeb: async function () {
+      await myContract.methods.setStudentDetails(1000, 'Ngoc', 'BK').send({ from: '0x1B050B39933Fa4db09B798a0d27bedc580C18D5A' }).then(output => output)
+      await myContract.methods.getStudentDetails().call().then(result => console.log(result))
+    },
+    getValue: function () {
+      myContract.methods.getStudentDetails().call().then(result => console.log(result))
     }
   }
 }
@@ -1013,7 +1070,7 @@ export default {
       }
       .Collapsible_contentOuter{
         display: block;
-        transition: max-height 0.3s linear 0s;
+        transition: max-height 0.2s linear 0s;
         max-height: 0;
         overflow: hidden;
         .Collapsible_contentInner{
