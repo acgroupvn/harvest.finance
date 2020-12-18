@@ -84,7 +84,9 @@
         <div height="25px" class="gap2"></div>
         <div class="farm__to_connectwallet">
           You haven't connected a wallet.
+          <div @click="openMatmak">
           <button type="button" height="40px" width="160px" class="wl-button">Connect Wallet</button>
+          </div>
         </div>
         <div height="25px" class="gap2"></div>
         <h2 class="body-text">Deposit and farm your assets</h2>
@@ -1450,6 +1452,33 @@
         </div>
       </div>
     </div>
+    <div class="close">
+  <div v-if="clo1" class="metamat">
+    <div @click="clo1 = !clo1" class="metamat__xx">
+      <div class="Knnv"></div>
+      <div class="web3__card">
+        <div class="wrapper">
+          <div class="container">
+            <div class="container-img">
+              <img src="../assets/metama.png" alt="">
+              <div class="name">MetaMask</div>
+              <!-- <div class="description">Connect to your MetaMask Wallet</div> -->
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="container">
+            <div class="container-img">
+              <img src="../assets/mt.svg" alt="">
+              <div class="name1">WalletConnect</div>
+              <!-- <div class="description">Connect to your MetaMask Wallet</div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
   </div>
 </template>
 
@@ -1459,7 +1488,8 @@ export default {
     return {
       test: true,
       click: true,
-      clo: true
+      clo: true,
+      clo1: true
     }
   },
   methods: {
@@ -1486,11 +1516,22 @@ export default {
     openIn: function () {
       var close = document.querySelector('.closeIn')
       close.classList.add('openIn')
+    },
+    openMatmak: function () {
+      var close = document.querySelector('.close')
+      close.classList.add('open')
+      this.clo1 = true
     }
   }
 }
 </script>
 <style lang="scss" scoped>
+.close{
+  display:none;
+}
+.close.open{
+  display: block;
+}
 .closeTab{
   display:none;
 }
@@ -2187,5 +2228,147 @@ h2{
 }
 .iconClose{
   display: none;
+}
+.metamat{
+  transition: opacity 0.1s ease-in-out 0s;
+  text-align: center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  margin-left: -50vw;
+  top: 0px;
+  left: 50%;
+  z-index: 2;
+  will-change: opacity;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.metamat__xx{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.Knnv{
+  position: absolute;
+  inset: 0px;
+}
+.web3__card{
+  border-radius: 0px;
+  border: 2px solid black;
+  background-color: rgb(255, 252, 230);
+  box-shadow: black 3px 3px;
+}
+.web3__card{
+  position: relative;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  margin: 10px;
+  padding: 0px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 500px;
+  min-width: fit-content;
+  max-height: 100%;
+  overflow: auto;
+}
+.wrapper{
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 0px;
+  border: 1px solid rgba(195, 195, 195, 0.14);
+}
+.wrapper{
+  box-sizing: border-box !important;
+}
+.container{
+  border-radius:0px;
+  background: transparent;
+  transition: background-color 0.2s ease-in-out 0s;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  padding: 24px 16px;
+  /* width:458px;
+  height:162px; */
+}
+.container-img{
+  width: 45px;
+  height: 45px;
+  display: flex;
+  border-radius: 50%;
+  overflow: visible;
+  box-shadow: none;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.container{
+  box-sizing:border-box !important;
+}
+.container{
+  border-radius: 0px;
+  background-color: rgb(238, 191, 101) !important;
+}
+.container img{
+  width:100%;
+  height:100%;
+  margin-top:-26px;
+}
+.name{
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 0.5em;
+  color: rgb(12, 12, 13);
+  margin-top: 133%;
+  margin-left: -75px;
+}
+.name1{
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 0.5em;
+  color: rgb(12, 12, 13);
+  margin-top: 133%;
+  margin-left: -93px;
+}
+.description{
+  width: 100%;
+  font-size: 18px;
+  margin: 0.333em 0px;
 }
 </style>
