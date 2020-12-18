@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="harvest__Stake">
     <h2 class="harvest__Stake-title">
       Earn
@@ -7,12 +8,14 @@
     </h2>
     <div class="harvest__Stake-content">
       You haven't connected a wallet.
+      <div @click="openMatmak">
       <button class="harvest__Stake-content-button">Connect Wallet</button>
+      </div>
     </div>
     <h3 class="harvest__Stake-title-2">
       Stake your LP tokens for rewards
     </h3>
-    <div class="harvest__Stake-tab">
+    <div class="harvest__Stake-tab open">
       <div class="harvest__Stake-tab-x">
         <div class="harvest__Stake-tab-xx">
           <div class="harvest__Stake-tab-inner">
@@ -183,1239 +186,987 @@
         </div>
       </div>
     </div>
-    <div class="body__tab">
-      <div @click="openTab">
-      <div class="body__tab-stablecoins">
-        <span class="closed">
-          <div class="boder"></div>
-          <div class="body__tab-stablecoins-1">
-            <div class="BTS1">→</div>
-            <div class="menu__StaCoins">
-              <div class="menu__StaCoins-1-n">
-                <span >
-                  <i class="fas fa-angle-down"></i>
-                </span>
-                <b>FARM Liquidity</b>
-              </div>
-              <div class="menu__StaCoins-2">
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/farm-usdc.png" class="img_icon" alt="">
-                  FARM/USDC
-                </div>
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/farm-weth.png" class="img_icon" alt="">
-                  FARM/ETH
-                </div>
-              </div>
-              <div class="menu__StaCoins-3">
-                <span>APY:
-                  <b>
-                    <div class="creaz">
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                    </div>
-                  </b>
-                </span>
-                <span>Deposits($):
-                  <b>...</b>
-                </span>
-                <div class="menu__StaCoins-3-icon">
-                  Rewards:
-                  <img src="../assets/farm.png" class="stacoins_img" alt="">
-                </div>
-              </div>
+    <div class="Collapsible">
+      <div class="body__tab-stablecoins-1" @click="openTab">
+        <div class="menu__StaCoins">
+          <div class="menu__StaCoins-1-n">
+            <span>
+              <i class="fas fa-angle-down iconClose"></i>
+              <i class="fas fa-angle-up iconOpen"></i>
+            </span>
+            <b>FARM Liquidity</b>
+          </div>
+          <div class="menu__StaCoins-2">
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/farm-usdc.png" class="img_icon" alt="img">
+              FARM/USDC
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/farm-weth.png" class="img_icon" alt="img">
+              FARM/ETH
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/farm-grain.png" class="img_icon" alt="img">
+              FARM/GRAIN
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <div class="moon">🌕</div>
+              Moonswap
             </div>
           </div>
-        </span>
-        <div class="closeTab">
-        <div class="body__amount_xx">
-          <div class="body__amount_xx-title-table">
-            <div class="body__amount_xx-title-tablee">
-              <div class="body__amount_xx-title-tablee-M">Amount</div>
-              <div class="body__amount_xx-title-tablee-A">Asset</div>
-              <div class="body__amount_xx-title-tablee-H">Harvest APY</div>
-              <div class="body__amount_xx-title-tablee-D">Deposits ($)</div>
-              <div class="body__amount_xx-title-tablee-Y">Your balance</div>
-            </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
+          <div class="menu__StaCoins-3">
+            <span>
+              APY:
+              <b>
+                <div class="creaz">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
                 </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/farm-usdc.png" alt="" class="weth-img">
-                FARM/USDC
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
+              </b>
+            </span>
+            <span></span>
           </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/farm-weth.png" alt="" class="weth-img">
-                FARM/ETH
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-        </div>
         </div>
       </div>
-      </div>
-      <div @click="openStab">
-      <div class="body__tab-stablecoins">
-        <span class="closed">
-          <div class="boder"></div>
-          <div class="body__tab-stablecoins-1">
-            <div class="BTS1">→</div>
-            <div class="menu__StaCoins">
-              <div class="menu__StaCoins-1">
-                <span>
-                  <i class="fas fa-angle-down"></i>
-                </span>
-                <b>Stablecoins</b>
-              </div>
-              <div class="menu__StaCoins-2">
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/icon-10.png" class="img_icon" alt="">
-                  YCRV
+      <div class="closeTab">
+      <div v-if="click" class="harvest__Stake-tab">
+      <div class="harvest__Stake-tab-x">
+        <div @click.prevent="click=!click" class="harvest__Stake-tab-xx">
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <img src="../assets/farm.png" class="harvest__Stake-tab-inner-1-img" alt="">
+                Profit Sharing
+              </h3>
+              <span>
+                Deposit:
+                <b>FARM</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
                 </div>
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/three-pool.png" class="img_icon" alt="">
-                  3CRV
-                </div>
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/icon-4.png" class="img_icon" alt="">
-                  CRV:COMPOUND
-                </div>
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/icon-3.png" class="img_icon" alt="">
-                  CRV:BUSD
-                </div>
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/icon-5.png" class="img_icon" alt="">
-                  CRV:USDN
-                </div>
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/usdc.png" class="img_icon" alt="">
-                  USDC
-                </div>
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/usdt.png" class="img_icon" alt="">
-                  USDT
-                </div>
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/tusd.png" class="img_icon" alt="">
-                  TUSD
-                </div>
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/icon-6.png" class="img_icon" alt="">
-                  DAI
-                </div>
-              </div>
-              <div class="menu__StaCoins-3">
-                <span>APY:
-                  <b>
-                    <div class="creaz">
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                    </div>
-                  </b>
-                </span>
-                <span>Deposits($):
-                  <b>179.34M</b>
-                </span>
-                <div class="menu__StaCoins-3-icon">
-                  Rewards:
-                  <img src="../assets/icon-2.png" class="stacoins_img" alt="">
-                  <img src="../assets/icon-1.png" class="stacoins_img" alt="">
-                  <img src="../assets/icon-9.png" class="stacoins_img" alt="">
-                  <img src="../assets/farm.png" class="stacoins_img" alt="">
-                </div>
+              </button>
+              <b>Auto-compounding</b>
+              <div class="Cy">
               </div>
             </div>
           </div>
-        </span>
-        <div class="closeStab">
-        <div class="body__amount_xx">
-          <div class="body__amount_xx-title-table">
-              <div class="body__amount_xx-title-tablee">
-                  <div class="body__amount_xx-title-tablee-M">Amount</div>
-                  <div class="body__amount_xx-title-tablee-A">Asset</div>
-                  <div class="body__amount_xx-title-tablee-H">Harvest APY</div>
-                  <div class="body__amount_xx-title-tablee-D">Deposits ($)</div>
-                  <div class="body__amount_xx-title-tablee-Y">Your balance</div>
-              </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <span>🎨</span>
+                Creativity Farm
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
                 </div>
+              </button>
+              <b>14,200 USD in prizes</b>
+              <div class="Cy">
               </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/icon-8.png" alt="" class="weth-img">
-                CRV:HUSD
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
             </div>
           </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <span>💻</span>
+                Creativity Farm
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
                 </div>
+              </button>
+              <b>5,000 USD in prizes</b>
+              <div class="Cy">
               </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/icon-10.png" alt="" class="weth-img">
-                YCRV
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
             </div>
           </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <img src="../assets/d.png" class="harvest__Stake-tab-inner-1-img" alt="">
+                Profit Sharing
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
                 </div>
+              </button>
+              <b></b>
+              <div class="Cy">
               </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/three-pool.png" alt="" class="weth-img">
-                3CRV
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
             </div>
           </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <img src="../assets/weth.png" class="harvest__Stake-tab-inner-1-img" alt="">
+                Profit Sharing
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
                 </div>
+              </button>
+              <b></b>
+              <div class="Cy">
               </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/icon-4.png" alt="" class="weth-img">
-                CRV:COMPOUND
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
             </div>
           </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/icon-3.png" alt="" class="weth-img">
-                CRV:BUSD
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/icon-5.png" alt="" class="weth-img">
-                CRV:USDN
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/usdc.png" alt="" class="weth-img">
-                USDC
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/usdt.png" alt="" class="weth-img">
-                USDT
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/tusd.png" alt="" class="weth-img">
-                TUSD
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/icon-6.png" alt="" class="weth-img">
-                DAI
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-        </div>
         </div>
       </div>
-      </div>
-      <div @click="openBTC">
-      <div class="body__tab-stablecoins">
-        <span class="closed">
-          <div class="boder"></div>
-          <div class="body__tab-stablecoins-1">
-            <div class="BTS1">→</div>
-            <div class="menu__StaCoins">
-                <div class="menu__StaCoins-1">
-                  <span>
-                    <i class="fas fa-angle-down"></i>
-                  </span>
-                  <b>BTC</b>
-                </div>
-                <div class="menu__StaCoins-2">
-                  <div class="menu__StaCoins-2-img">
-                    <img src="../assets/icon-11.png" class="img_icon" alt="">
-                    CRV:TBTC
-                  </div>
-                  <div class="menu__StaCoins-2-img">
-                    <img src="../assets/icon-12.png" class="img_icon" alt="">
-                    CRV:RENWBTC
-                  </div>
-                  <div class="menu__StaCoins-2-img">
-                    <img src="../assets/icon-13.png" class="img_icon" alt="">
-                    WBTC
-                  </div>
-                  <div class="menu__StaCoins-2-img">
-                    <img src="../assets/icon-14.png" class="img_icon" alt="">
-                    RENBTC
-                  </div>
-                </div>
-                <div class="menu__StaCoins-3">
-                  <span>APY:
-                    <b>
-                      <div class="creaz">
-                      <span>.</span>
-                      <span>.</span>
-                      <span>.</span>
-                      </div>
-                    </b>
-                  </span>
-                  <span>Deposits($):
-                    <b>179.34M</b>
-                  </span>
-                  <div class="menu__StaCoins-3-icon">
-                    Rewards:
-                    <img src="../assets/icon-2.png" class="stacoins_img" alt="">
-                    <img src="../assets/icon-15.png" class="stacoins_img" alt="">
-                    <img src="../assets/icon-1.png" class="stacoins_img" alt="">
-                    <img src="../assets/icon-9.png" class="stacoins_img" alt="">
-                    <img src="../assets/farm.png" class="stacoins_img" alt="">
-                  </div>
-                </div>
-              </div>
+    </div>
+    </div>
+    </div>
+    <div class="Collapsible">
+      <div class="body__tab-stablecoins-1" @click="openStab">
+        <div class="menu__StaCoins">
+          <div class="menu__StaCoins-1-n">
+            <span>
+              <i class="fas fa-angle-down iconClose"></i>
+              <i class="fas fa-angle-up iconOpen"></i>
+            </span>
+            <b>Stablecoins</b>
           </div>
-        </span>
-        <div class="closeBTC">
-        <div class="body__amount_xx">
-          <div class="body__amount_xx-title-table">
-              <div class="body__amount_xx-title-tablee">
-                  <div class="body__amount_xx-title-tablee-M">Amount</div>
-                  <div class="body__amount_xx-title-tablee-A">Asset</div>
-                  <div class="body__amount_xx-title-tablee-H">Harvest APY</div>
-                  <div class="body__amount_xx-title-tablee-D">Deposits ($)</div>
-                  <div class="body__amount_xx-title-tablee-Y">Your balance</div>
-              </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
+          <div class="menu__StaCoins-2">
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/icon-10.png" class="img_icon" alt="img">
+              YCRV
             </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/icon-b.png" alt="" class="weth-img">
-                CRV:HBTC
-              </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/three-pool.png" class="img_icon" alt="img">
+              3CRV
             </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/icon-8.png" class="img_icon" alt="img">
+              CRV:HUSD
             </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/icon-4.png" class="img_icon" alt="img">
+              CRV:COMPOUND
             </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/icon-3.png" class="img_icon" alt="img">
+              CRV:BUSD
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/icon-5.png" class="img_icon" alt="img">
+              CRV:BUSD
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/usdc.png" class="img_icon" alt="img">
+              USDC
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/usdt.png" class="img_icon" alt="img">
+              USDT
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/icon-6.png" class="img_icon" alt="img">
+              DAI
             </div>
           </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
+          <div class="menu__StaCoins-3">
+            <span>
+              APY:
+              <b>
+                <div class="creaz">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
                 </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/icon-11.png" alt="" class="weth-img">
-                CRV:TBTC
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
+              </b>
+            </span>
+            <span></span>
           </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/icon-12.png" alt="" class="weth-img">
-                CRV:RENWBTC
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/usdc.png" alt="" class="weth-img">
-                WBTC
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/icon-14.png" alt="" class="weth-img">
-                RENBTC
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-        </div>
         </div>
       </div>
+      <div class="closeStab">
+      <div v-if="click1" class="harvest__Stake-tab">
+      <div class="harvest__Stake-tab-x">
+        <div @click.prevent="click1=!click1" class="harvest__Stake-tab-xx">
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <img src="../assets/farm.png" class="harvest__Stake-tab-inner-1-img" alt="">
+                Profit Sharing
+              </h3>
+              <span>
+                Deposit:
+                <b>FARM</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b>Auto-compounding</b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <span>🎨</span>
+                Creativity Farm
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b>14,200 USD in prizes</b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <span>💻</span>
+                Creativity Farm
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b>5,000 USD in prizes</b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <img src="../assets/d.png" class="harvest__Stake-tab-inner-1-img" alt="">
+                Profit Sharing
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b></b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <img src="../assets/weth.png" class="harvest__Stake-tab-inner-1-img" alt="">
+                Profit Sharing
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b></b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div @click="openShu">
-      <div class="body__tab-stablecoins">
-        <span class="closed">
-          <div class="boder"></div>
-          <div class="body__tab-stablecoins-1">
-            <div class="BTS1">→</div>
-            <div class="menu__StaCoins">
-              <div class="menu__StaCoins-1">
-                <span>
-                  <i class="fas fa-angle-down"></i>
-                </span>
-                <b>Sushiswap</b>
-              </div>
-              <div class="menu__StaCoins-2">
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/dai-1.png" class="img_icon" alt="">
-                  ETH-DAI
-                </div>
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/dai-2.png" class="img_icon" alt="">
-                  ETH-USDC
-                </div>
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/dai-3.png" class="img_icon" alt="">
-                  ETH-USDT
-                </div>
-                <div class="menu__StaCoins-2-img">
-                  <img src="../assets/dai-4.png" class="img_icon" alt="">
-                  ETH-WBTC
-                </div>
-              </div>
-              <div class="menu__StaCoins-3">
-                <span>APY:
-                  <b>
-                    <div class="creaz">
-                    <span>.</span>
-                    <span>.</span>
-                    <span>.</span>
-                    </div>
-                  </b>
-                </span>
-                <span>Deposits($):
-                  <b>179.34M</b>
-                </span>
-                <div class="menu__StaCoins-3-icon">
-                  Rewards:
-                  <img src="../assets/dai-5.png" class="stacoins_img" alt="">
-                  <img src="../assets/farm.png" class="stacoins_img" alt="">
-                </div>
-              </div>
+    </div>
+    </div>
+    </div>
+    <div class="Collapsible">
+      <div class="body__tab-stablecoins-1" @click="openBTC">
+        <div class="menu__StaCoins">
+          <div class="menu__StaCoins-1-n">
+            <span>
+              <i class="fas fa-angle-down iconClose"></i>
+              <i class="fas fa-angle-up iconOpen"></i>
+            </span>
+            <b>FARM Liquidity</b>
+          </div>
+          <div class="menu__StaCoins-2">
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/icon-7.png" class="img_icon" alt="img">
+              CRV:HBTC
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/icon-11.png" class="img_icon" alt="img">
+              CRV:TBTC
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/icon-12.png" class="img_icon" alt="img">
+              CRV:RENWBTC
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/icon-13.png" class="img_icon" alt="img">
+              WBTC
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/icon-14.png" class="img_icon" alt="img">
+              RENBTC
             </div>
           </div>
-        </span>
-        <div class="closeShu">
-        <div class="body__amount_xx">
-          <div class="body__amount_xx-title-table">
-              <div class="body__amount_xx-title-tablee">
-                  <div class="body__amount_xx-title-tablee-M">Amount</div>
-                  <div class="body__amount_xx-title-tablee-A">Asset</div>
-                  <div class="body__amount_xx-title-tablee-H">Harvest APY</div>
-                  <div class="body__amount_xx-title-tablee-D">Deposits ($)</div>
-                  <div class="body__amount_xx-title-tablee-Y">Your balance</div>
-              </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
+          <div class="menu__StaCoins-3">
+            <span>
+              APY:
+              <b>
+                <div class="creaz">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
                 </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/dai-1.png" alt="" class="weth-img">
-                ETH-DAI
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/dai-2.png" alt="" class="weth-img">
-                ETH-USDC
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/dai-3.png" alt="" class="weth-img">
-                ETH-USDT
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-          <div class="body__amount_xx-2">
-            <div class="body__amount_xx-2-1-1_button">
-              <div class="xx-button-2-1-1">
-                <div class="lowIgi">
-                  <div class="ljvMwn"></div>
-                  <div value disabled placeholder="0" class="input_amount">
-                    <input type="number" min="0" disabled placeholder="0">
-                  </div>
-                  <button class="B-button">MAX</button>
-                </div>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_WETH">
-              <div class="body__amount_xx-2-1-1_WETHhh">
-                <img src="../assets/dai-4.png" alt="" class="weth-img">
-                ETH-WBTC
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_node">
-              <div class="gliaon">
-                <span>...</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Deposits">
-              <div class="body__amount_xx-2-1-1_Deposits-1">
-                13.99M
-              </div>
-            </div>
-            <div class="body__amount_xx-2-1-1_Your">
-              <span class="Your">0.000000000</span>
-            </div>
-          </div>
-          </div>
+              </b>
+            </span>
+            <span></span>
           </div>
         </div>
-        </div>
-        <div @click="openIn">
-        <div class="body__tab-stablecoins">
-          <span class="closed">
-            <div class="boder"></div>
-            <div class="body__tab-stablecoins-1">
-              <div class="BTS1">→</div>
-              <div class="menu__StaCoins">
-                <div class="menu__StaCoins-1">
-                  <span>
-                    <i class="fas fa-angle-down"></i>
-                  </span>
-                  <b>Inactive</b>
-                </div>
-                <div class="menu__StaCoins-2">
-                  <div class="menu__StaCoins-2-img">
-                    <img src="../assets/tb-1.png" class="img_icon" alt="">
-                    WBTC-TBTC
-                  </div>
-                  <div class="menu__StaCoins-2-img">
-                    <img src="../assets/tb-2.png" class="img_icon" alt="">
-                    ETH-DAI
-                  </div>
-                  <div class="menu__StaCoins-2-img">
-                    <img src="../assets/tb-3.png" class="img_icon" alt="">
-                    ETH-USDC
-                  </div>
-                  <div class="menu__StaCoins-2-img">
-                    <img src="../assets/tb-4.png" class="img_icon" alt="">
-                    ETH-USDT
-                  </div>
-                  <div class="menu__StaCoins-2-img">
-                    <img src="../assets/tb-5.png" class="img_icon" alt="">
-                    ETH-WBTC
-                  </div>
-                </div>
-                <div class="menu__StaCoins-3">
-                  <span>APY:
-                    <b>
-                      <div class="creaz">
-                      <span>.</span>
-                      <span>.</span>
-                      <span>.</span>
-                      </div>
-                    </b>
-                  </span>
-                  <span>Deposits($):
-                    <b>179.34M</b>
-                  </span>
-                  <div class="menu__StaCoins-3-icon">
-                    Rewards:
-                      <b>None</b>
-                  </div>
-                </div>
-              </div>
+      </div>
+      <div class="closeBTC">
+      <div v-if="click2" class="harvest__Stake-tab">
+      <div class="harvest__Stake-tab-x">
+        <div @click.prevent="click2=!click2" class="harvest__Stake-tab-xx">
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
             </div>
-          </span>
-          <div class="closeIn">
-          <div class="body__amount_xx">
-            <div class="body__amount_xx-title-table">
-              <div class="body__amount_xx-title-tablee">
-                <div class="body__amount_xx-title-tablee-M">Amount</div>
-                <div class="body__amount_xx-title-tablee-A">Asset</div>
-                <div class="body__amount_xx-title-tablee-H">Harvest APY</div>
-                <div class="body__amount_xx-title-tablee-D">Deposits ($)</div>
-                <div class="body__amount_xx-title-tablee-Y">Your balance</div>
-              </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <img src="../assets/farm.png" class="harvest__Stake-tab-inner-1-img" alt="">
+                Profit Sharing
+              </h3>
+              <span>
+                Deposit:
+                <b>FARM</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
             </div>
-            <div class="body__amount_xx-2">
-              <div class="body__amount_xx-2-1-1_button">
-                <div class="xx-button-2-1-1">
-                  <div class="lowIgi">
-                    <div class="ljvMwn"></div>
-                    <div value disabled placeholder="0" class="input_amount">
-                      <input type="number" min="0" disabled placeholder="0">
-                    </div>
-                    <button class="B-button">MAX</button>
-                  </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
                 </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_WETH">
-                <div class="body__amount_xx-2-1-1_WETHhh">
-                  <img src="../assets/tb-1.png" alt="" class="weth-img">
-                  WBTC-TBTC
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_node">
-                <div class="gliaon">
-                  <span>...</span>
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_Deposits">
-                <div class="body__amount_xx-2-1-1_Deposits-1">
-                  13.99M
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_Your">
-                <span class="Your">0.000000000</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2">
-              <div class="body__amount_xx-2-1-1_button">
-                <div class="xx-button-2-1-1">
-                  <div class="lowIgi">
-                    <div class="ljvMwn"></div>
-                    <div value disabled placeholder="0" class="input_amount">
-                      <input type="number" min="0" disabled placeholder="0">
-                    </div>
-                    <button class="B-button">MAX</button>
-                  </div>
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_WETH">
-                <div class="body__amount_xx-2-1-1_WETHhh">
-                  <img src="../assets/tb-2.png" alt="" class="weth-img">
-                  CRV:TBTC
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_node">
-                <div class="gliaon">
-                  <span>...</span>
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_Deposits">
-                <div class="body__amount_xx-2-1-1_Deposits-1">
-                  13.99M
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_Your">
-                <span class="Your">0.000000000</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2">
-              <div class="body__amount_xx-2-1-1_button">
-                <div class="xx-button-2-1-1">
-                  <div class="lowIgi">
-                    <div class="ljvMwn"></div>
-                    <div value disabled placeholder="0" class="input_amount">
-                      <input type="number" min="0" disabled placeholder="0">
-                    </div>
-                    <button class="B-button">MAX</button>
-                  </div>
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_WETH">
-                <div class="body__amount_xx-2-1-1_WETHhh">
-                  <img src="../assets/tb-3.png" alt="" class="weth-img">
-                  ETH-DAI
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_node">
-                <div class="gliaon">
-                  <span>...</span>
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_Deposits">
-                <div class="body__amount_xx-2-1-1_Deposits-1">
-                  13.99M
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_Your">
-                <span class="Your">0.000000000</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2">
-              <div class="body__amount_xx-2-1-1_button">
-                <div class="xx-button-2-1-1">
-                  <div class="lowIgi">
-                    <div class="ljvMwn"></div>
-                    <div value disabled placeholder="0" class="input_amount">
-                      <input type="number" min="0" disabled placeholder="0">
-                    </div>
-                    <button class="B-button">MAX</button>
-                  </div>
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_WETH">
-                <div class="body__amount_xx-2-1-1_WETHhh">
-                  <img src="../assets/tb-4.png" alt="" class="weth-img">
-                  ETH-USDC
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_node">
-                <div class="gliaon">
-                  <span>...</span>
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_Deposits">
-                <div class="body__amount_xx-2-1-1_Deposits-1">
-                  13.99M
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_Your">
-                <span class="Your">0.000000000</span>
-              </div>
-            </div>
-            <div class="body__amount_xx-2">
-              <div class="body__amount_xx-2-1-1_button">
-                <div class="xx-button-2-1-1">
-                  <div class="lowIgi">
-                    <div class="ljvMwn"></div>
-                    <div value disabled placeholder="0" class="input_amount">
-                      <input type="number" min="0" disabled placeholder="0">
-                    </div>
-                    <button class="B-button">MAX</button>
-                  </div>
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_WETH">
-                <div class="body__amount_xx-2-1-1_WETHhh">
-                  <img src="../assets/tb-5.png" alt="" class="weth-img">
-                  RENBTC
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_node">
-                <div class="gliaon">
-                  <span>...</span>
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_Deposits">
-                <div class="body__amount_xx-2-1-1_Deposits-1">
-                  13.99M
-                </div>
-              </div>
-              <div class="body__amount_xx-2-1-1_Your">
-                <span class="Your">0.000000000</span>
+              </button>
+              <b>Auto-compounding</b>
+              <div class="Cy">
               </div>
             </div>
           </div>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <span>🎨</span>
+                Creativity Farm
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b>14,200 USD in prizes</b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <span>💻</span>
+                Creativity Farm
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b>5,000 USD in prizes</b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <img src="../assets/d.png" class="harvest__Stake-tab-inner-1-img" alt="">
+                Profit Sharing
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b></b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <img src="../assets/weth.png" class="harvest__Stake-tab-inner-1-img" alt="">
+                Profit Sharing
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b></b>
+              <div class="Cy">
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    <div class="Collapsible">
+      <div class="body__tab-stablecoins-1" @click="openShu">
+        <div class="menu__StaCoins">
+          <div class="menu__StaCoins-1-n">
+            <span>
+              <i class="fas fa-angle-down iconClose"></i>
+              <i class="fas fa-angle-up iconOpen"></i>
+            </span>
+            <b>FARM Liquidity</b>
+          </div>
+          <div class="menu__StaCoins-2">
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/dai-1.png" class="img_icon" alt="img">
+              ETH-DAI
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/dai-2.png" class="img_icon" alt="img">
+              ETH-USDC
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/dai-3.png" class="img_icon" alt="img">
+              ETH-USDT
+            </div>
+            <div class="menu__StaCoins-2-img">
+              <img src="../assets/dai-4.png" class="img_icon" alt="img">
+              ETH-WBTC
+            </div>
+          </div>
+          <div class="menu__StaCoins-3">
+            <span>
+              APY:
+              <b>
+                <div class="creaz">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </b>
+            </span>
+            <span></span>
+          </div>
         </div>
+      </div>
+      <div class="closeShu">
+      <div v-if="click3" class="harvest__Stake-tab">
+      <div class="harvest__Stake-tab-x">
+        <div @click.prevent="click3=!click3" class="harvest__Stake-tab-xx">
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <img src="../assets/farm.png" class="harvest__Stake-tab-inner-1-img" alt="">
+                Profit Sharing
+              </h3>
+              <span>
+                Deposit:
+                <b>FARM</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b>Auto-compounding</b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <span>🎨</span>
+                Creativity Farm
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b>14,200 USD in prizes</b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <span>💻</span>
+                Creativity Farm
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b>5,000 USD in prizes</b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <img src="../assets/d.png" class="harvest__Stake-tab-inner-1-img" alt="">
+                Profit Sharing
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b></b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+          <div class="harvest__Stake-tab-inner">
+            <div class="react-component">
+              Add
+              <b>FARM</b>to MetaMask
+            </div>
+            <img src="../assets/metama.png" class="gl" alt="">
+            <div class="harvest__Stake-tab-inner-1">
+              <h3>
+                <img src="../assets/weth.png" class="harvest__Stake-tab-inner-1-img" alt="">
+                Profit Sharing
+              </h3>
+              <span>
+                Deposit:
+                <b>Creativity</b>
+              </span>
+              <span>
+                Earn:
+                <b>FARM</b>
+              </span>
+            </div>
+            <div class="harvest__Stake-tab-inner-2">
+              <button class="harvest__Stake-tab-inner-2-buton">
+                <div class="inner-2-buton">
+                  <span>.</span>
+                  <span>.</span>
+                  <span>.</span>
+                </div>
+              </button>
+              <b></b>
+              <div class="Cy">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
     </div>
   </div>
+  <div class="close">
+  <div v-if="clo" class="metamat">
+    <div @click.prevent="clo=!clo" class="metamat__xx">
+      <div class="Knnv"></div>
+      <div class="web3__card">
+        <div class="wrapper">
+          <div class="container">
+            <div class="container-img">
+              <img src="../assets/metama.png" alt="">
+              <div class="name">MetaMask</div>
+              <!-- <div class="description">Connect to your MetaMask Wallet</div> -->
+            </div>
+          </div>
+        </div>
+        <div class="wrapper">
+          <div class="container">
+            <div class="container-img">
+              <img src="../assets/mt.svg" alt="">
+              <div class="name1">WalletConnect</div>
+              <!-- <div class="description">Connect to your MetaMask Wallet</div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>
 </template>
 
 <script>
 export default {
   data: function () {
     return {
-      click: true
+      click: true,
+      clo: true,
+      click1: true,
+      click2: true,
+      click3: true
     }
   },
   methods: {
     openTab: function () {
       var close = document.querySelector('.closeTab')
       close.classList.add('openTab')
+      this.click = true
     },
     openStab: function () {
       var close = document.querySelector('.closeStab')
       close.classList.add('openStab')
+      this.click1 = true
     },
     openBTC: function () {
       var close = document.querySelector('.closeBTC')
       close.classList.add('openBTC')
+      this.click2 = true
     },
     openShu: function () {
       var close = document.querySelector('.closeShu')
       close.classList.add('openShu')
+      this.click3 = true
     },
-    openIn: function () {
-      var close = document.querySelector('.closeIn')
-      close.classList.add('openIn')
+    openMatmak: function () {
+      var close = document.querySelector('.close')
+      close.classList.add('open')
+      this.clo = true
     }
   }
 }
 </script>
 
 <style>
+.close{
+  display:none;
+}
+.close.open{
+  display: block;
+}
 .closeTab{
   display:none;
 }
 .closeTab.openTab{
+  display: block;
+}
+.closeStab{
+  display:none;
+}
+.closeStab.openStab{
   display: block;
 }
 .closeBTC{
@@ -1425,22 +1176,10 @@ export default {
   display: block;
 }
 .closeShu{
-  display: none;
+  display:none;
 }
 .closeShu.openShu{
   display: block;
-}
-.closeStab{
-  display: none;
-}
-.closeStab.openStab{
-  display: block;
-}
-.closeIn{
-  display:none;
-}
-.closeIn.openIn{
-  display:block;
 }
 .harvest__Stake{
   max-width: 750px;
@@ -1600,12 +1339,6 @@ export default {
   transition: all 0.25s ease 0s;
   padding: 10px;
 }
-.BTS1{
-  position: absolute;
-  right: 3px;
-  margin-top: 26px;
-  display: none;
-}
 .menu__StaCoins{
   -webkit-box-pack: justify;
   justify-content: space-between;
@@ -1629,21 +1362,6 @@ export default {
 }
 .menu__StaCoins-1 b{
   margin-left:5px;
-}
-b{
-  font-weight: bold;
-}
-.icon{
-  overflow: visible;
-  width: 0.625em;
-  vertical-align: -0.225em;
-  font-size: 1.3333333333em;
-  line-height: 0.75em;
-  display: inline-block;
-  height: 1em;
-}
-path{
-  fill:currentcolor;
 }
 .menu__StaCoins-2{
   width: auto;
@@ -1688,232 +1406,158 @@ path{
 .menu__StaCoins-3-icon img{
   margin-left: 3px;
 }
-.stacoins_img{
+.moon{
   width: 20px;
   height: 20px;
   margin-right: 5px;
+  font-size: 12px;
 }
-.Depos{
-  width: 48%;
-  min-height: 40px;
-  border-radius: 3px;
-  border: 2px solid rgb(53, 52, 47);
-  background-color: rgb(255, 252, 230);
-  font-weight: bold;
-  cursor: pointer;
-  outline: 0px;
-  transition: all 0.25s ease 0s;
+.creaz{
+  display: contents;
 }
-.body__amount_xx{
-  display: table;
-  width: 100%;
-  table-layout: fixed;
+.iconClose{
+  display: none;
 }
-.body__amount_xx-title-table{
-  margin-bottom: unset;
-  display: table-header-group;
-}
-.body__amount_xx-title-tablee{
-  display: table-row;
-}
-.body__amount_xx-title-tablee-M{
-  width: 210px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: left;
-  font-weight: normal;
-  padding: 10px 0px;
-  margin-right: 20px;
-}
-.body__amount_xx-title-tablee-A{
-  width: 170px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: left;
-  font-weight: normal;
-  padding: 10px 0px;
-  margin-right: 20px;
-}
-.body__amount_xx-title-tablee-H{
-  width: 160px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: left;
-  font-weight: normal;
-  padding: 10px 0px;
-  margin-right: 20px;
-}
-.body__amount_xx-title-tablee-D{
-  width: 100px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: left;
-  font-weight: normal;
-  padding: 10px 0px;
-  margin-right: 20px;
-}
-.body__amount_xx-title-tablee-Y{
-  width: 130px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: left;
-  font-weight: normal;
-  padding: 10px 0px;
-  margin-right: 20px;
-}
-.body__amount_xx-2{
-  width: auto;
-  display: table-cell;
-  vertical-align: middle;
+.metamat{
+  transition: opacity 0.1s ease-in-out 0s;
   text-align: center;
-  font-weight: normal;
-  padding: 10px 0px;
-  margin-right: 20px;
-  display:flex;
-}
-.menu__StaCoins-1-n{
-  -webkit-box-pack: justify;
-  justify-content: space-between;
-  font-size: 16px;
-  height: 100%;
-  width: 100%;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  margin-left: -50vw;
+  top: 0px;
+  left: 50%;
+  z-index: 2;
+  will-change: opacity;
+  background-color: rgba(0, 0, 0, 0.4);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
   display: flex;
-  overflow: overlay;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
 }
-.body__amount_xx-2-1-1_button{
+.metamat__xx{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.Knnv{
+  position: absolute;
+  inset: 0px;
+}
+.web3__card{
+  border-radius: 0px;
+  border: 2px solid black;
+  background-color: rgb(255, 252, 230);
+  box-shadow: black 3px 3px;
+}
+.web3__card{
+  position: relative;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  margin: 10px;
+  padding: 0px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 500px;
+  min-width: fit-content;
+  max-height: 100%;
+  overflow: auto;
+}
+.wrapper{
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  border-radius: 0px;
+  border: 1px solid rgba(195, 195, 195, 0.14);
+}
+.wrapper{
+  box-sizing: border-box !important;
+}
+.container{
+  border-radius:0px;
+  background: transparent;
+  transition: background-color 0.2s ease-in-out 0s;
+  width: 100%;
   display: flex;
   flex-direction: column;
   -webkit-box-pack: center;
   justify-content: center;
-  align-items: flex-start;
-}
-.xx-button-2-1-1{
-  display: flex;
-  position: relative;
-}
-.lowIgi{
-  display: flex;
-  position: relative;
-}
-.lowIgi input{
-  margin-right: 10px !important;
-}
-.input_amount input{
-  width: 120px;
-  border-radius: 3px;
-  border: 2px solid rgb(53, 52, 47);
-  height: 30px;
-  margin: 0px;
-  padding: 0px 0px 0px 10px;
-  outline: 0px;
-  font-family: dDin;
-}
-.input_amount input:disabled{
-  background-color: rgb(255, 252, 230);
-  opacity: 0.9;
-  cursor: not-allowed;
-}
-.B-button:disabled{
-  opacity: 0.9;
-  cursor: not-allowed;
-}
-.B-button{
-  width: auto;
-  min-height: 34px;
-  border-radius: 3px;
-  border: 2px solid rgb(53, 52, 47);
-  background-color: rgb(255, 252, 230);
-  font-weight: bold;
-  cursor: pointer;
-  outline: 0px;
-  transition: all 0.25s ease 0s;
-}
-.body__amount_xx-2-1-1_WETH{
-  width: 100px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  font-weight: normal;
-  padding: 10px 0px;
-  margin-right: 20px;
-}
-.body__amount_xx-2-1-1_WETHhh{
-  width: 170px;
-  height:30.59px;
-  display: flex;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
   -webkit-box-align: center;
   align-items: center;
-  font-weight: bold;
-  margin-right: 5px;
-  text-align: left;
-  position: relative;
-  margin-top:7px;
-  margin-left:10%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 12px;
+  padding: 24px 16px;
+  /* width:458px;
+  height:162px; */
 }
-.body__amount_xx-2-1-1_WETHhh img{
-  margin-right: 5px;
-}
-.weth-img{
-  max-width: 30px;
-  float: left;
-}
-.new{
-  position: absolute;
-  bottom: calc(50% - 15px);
-  left: -10px;
-  width: 35px;
-  height: 35px;
-}
-.body__amount_xx-2-1-1_node{
-  width: auto;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: left;
-  font-weight: bold;
-  padding: 10px 0px;
-  margin-right: 20px;
-  margin-left:38%;
-  margin-top:10%;
-}
-.body__amount_xx-2-1-1_Deposits{
-  width: auto;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  font-weight: normal;
-  padding: 10px 0px;
-  margin-right: 20px;
-  margin-left:69%;
-  margin-top:10%;
-}
-.Top{
-  position: fixed;
-}
-.body__amount_xx-2-1-1_Deposits-1{
+.container-img{
+  width: 45px;
+  height: 45px;
   display: flex;
-  -webkit-box-pack: start;
-  justify-content: flex-start;
+  border-radius: 50%;
+  overflow: visible;
+  box-shadow: none;
+  -webkit-box-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-  font-weight: bold;
-  text-align: left;
-  margin-right: 20px;
-  margin-right: -8pc;
 }
-.body__amount_xx-2-1-1_Your{
-  width: auto;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: left;
-  font-weight: bold;
-  padding: 10px 0px;
-  margin-right: 20px;
-  margin-left:46%;
-  margin-top:9%;
+.container{
+  box-sizing:border-box !important;
 }
-.Your{
-  font-family: "Roboto Mono", monospace;
+.container{
+  border-radius: 0px;
+  background-color: rgb(238, 191, 101) !important;
+}
+.container img{
+  width:100%;
+  height:100%;
+  margin-top:-26px;
+}
+.name{
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 0.5em;
+  color: rgb(12, 12, 13);
+  margin-top: 133%;
+  margin-left: -75px;
+}
+.name1{
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 0.5em;
+  color: rgb(12, 12, 13);
+  margin-top: 133%;
+  margin-left: -93px;
+}
+.description{
+  width: 100%;
+  font-size: 18px;
+  margin: 0.333em 0px;
 }
 </style>

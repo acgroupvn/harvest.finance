@@ -200,6 +200,7 @@
           <div class="body__tab">
           <div @click="openTab">
           <div class="body__tab-stablecoins">
+            <div class="AYD"></div>
             <span class="closed">
               <div class="boder"></div>
               <div class="body__tab-stablecoins-1">
@@ -207,7 +208,8 @@
                 <div class="menu__StaCoins">
                   <div class="menu__StaCoins-1-n">
                     <span >
-                      <i class="fas fa-angle-down"></i>
+                      <i class="fas fa-angle-down iconClose"></i>
+                      <i class="fas fa-angle-up iconOpen"></i>
                     </span>
                     <b>FARM Liquidity</b>
                   </div>
@@ -1395,7 +1397,7 @@
                 <button disabled class="Depos">Deposit</button>
                 <button disabled class="Depos">Deposit and Stake</button>
               </div>
-              <div class="body_DS-2" @click="click">
+              <div class="body_DS-2">
                 <div class="body_DS-2-withdraw checked">
                   <div class="withdraw__track">
                     <div class="withdraw__track-check">Withdraw</div>
@@ -1460,22 +1462,32 @@ export default {
     openTab: function () {
       var close = document.querySelector('.closeTab')
       close.classList.add('openTab')
+      this.click = true
+    },
+    closeTab: function () {
+      var close = document.querySelector('.closeTab')
+      close.classList.add('openTab')
+      this.click = true
     },
     openStab: function () {
       var close = document.querySelector('.closeStab')
       close.classList.add('openStab')
+      this.click = true
     },
     openBTC: function () {
       var close = document.querySelector('.closeBTC')
       close.classList.add('openBTC')
+      this.click = true
     },
     openShu: function () {
       var close = document.querySelector('.closeShu')
       close.classList.add('openShu')
+      this.click = true
     },
     openIn: function () {
       var close = document.querySelector('.closeIn')
       close.classList.add('openIn')
+      this.click = true
     }
   }
 }
@@ -2156,5 +2168,26 @@ h2{
   padding: 0px;
   position: absolute;
   width: 1px;
+}
+.AYD{
+  border-radius: 3px;
+  display: inline-block;
+  font-size: 13px;
+  left: -999em;
+  opacity: 0;
+  padding: 8px 21px;
+  position: fixed;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+  top: -999em;
+  visibility: hidden;
+  z-index: 999;
+  left: 588px;
+  top: 141px;
+  margin-top: -10px;
+  padding: 20px 30px;
+}
+.iconClose{
+  display: none;
 }
 </style>

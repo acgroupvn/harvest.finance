@@ -16,7 +16,7 @@
             <router-link to="/"  class-active="active" exact>Farm</router-link>
             <router-link to="/Stake"  class-active="active" exact>Stake</router-link>
             <router-link to="/FAQ"  class-active="active" exact>FAQ</router-link>
-            <a href="">Dashboard</a>
+            <router-link to="/Dashboard">Dashboard</router-link>
             <a href="">Stats</a>
             <a href="">Wiki</a>
             <a href="">策略</a>
