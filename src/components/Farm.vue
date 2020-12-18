@@ -245,8 +245,8 @@
               </div>
             </span>
             <div class="closeTab">
-            <div class="body__amount_xx">
-              <div class="body__amount_xx-title-table">
+            <div v-show="test == true" class="body__amount_xx">
+              <div @click="test = !test" class="body__amount_xx-title-table">
                 <div class="body__amount_xx-title-tablee">
                   <div class="body__amount_xx-title-tablee-M">Amount</div>
                   <div class="body__amount_xx-title-tablee-A">Asset</div>
@@ -399,7 +399,8 @@
               </div>
             </span>
             <div class="closeStab">
-            <div class="body__amount_xx">
+            <div v-if="clo">
+            <div @click ="clo = !clo" class="body__amount_xx">
               <div class="body__amount_xx-title-table">
                   <div class="body__amount_xx-title-tablee">
                       <div class="body__amount_xx-title-tablee-M">Amount</div>
@@ -729,6 +730,7 @@
                   <span class="Your">0.000000000</span>
                 </div>
               </div>
+            </div>
             </div>
             </div>
           </div>
@@ -1455,39 +1457,35 @@
 export default {
   data: function () {
     return {
-      click: true
+      test: true,
+      click: true,
+      clo: true
     }
   },
   methods: {
     openTab: function () {
       var close = document.querySelector('.closeTab')
       close.classList.add('openTab')
-      this.click = true
     },
     closeTab: function () {
       var close = document.querySelector('.closeTab')
       close.classList.add('openTab')
-      this.click = true
     },
     openStab: function () {
       var close = document.querySelector('.closeStab')
       close.classList.add('openStab')
-      this.click = true
     },
     openBTC: function () {
       var close = document.querySelector('.closeBTC')
       close.classList.add('openBTC')
-      this.click = true
     },
     openShu: function () {
       var close = document.querySelector('.closeShu')
       close.classList.add('openShu')
-      this.click = true
     },
     openIn: function () {
       var close = document.querySelector('.closeIn')
       close.classList.add('openIn')
-      this.click = true
     }
   }
 }
